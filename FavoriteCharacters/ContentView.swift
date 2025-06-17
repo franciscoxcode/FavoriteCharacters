@@ -16,12 +16,12 @@ struct Character: Identifiable {
 
 struct ContentView: View {
     @State var characters = [
-        Character(name: "Bart", image: "bart"),
-        Character(name: "Lisa", image: "lisa"), 
-        Character(name: "Homer", image: "homer"),
-        Character(name: "Marge", image: "marge"),
-        Character(name: "Maggie",  image: "maggie"),
-        Character(name: "Milhouse", image: "milhouse")
+        Character(name: "zico", image: "zico"),
+        Character(name: "lumi", image: "lumi"), 
+        Character(name: "dado", image: "dado"),
+        Character(name: "nira", image: "nira"),
+        Character(name: "piko",  image: "piko"),
+        Character(name: "timo", image: "timo")
         
     ]
     
@@ -32,7 +32,7 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.yellow.opacity(0.1)
+            Color.green.opacity(0.1)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Choose your favorite character")
@@ -55,17 +55,24 @@ struct CharacterCardView: View {
             Button(action: {
                 character.favorite.toggle()
             }){
-                VStack {
+                VStack(spacing: 4) {
                     Image(character.image)
                         .resizable()
-                        .frame(width: 120, height: 120)
+                        .frame(width: 90, height: 90)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                        .padding(.top)
                     Text(character.name)
+                        .foregroundColor(.black)
                     Image(systemName: character.favorite ? "heart.fill" : "heart")
+                        .foregroundColor(character.favorite ? .orange : .black)
+                        .padding(.bottom)
                 }
-                
+                .padding(5)
             }
-            .foregroundColor(character.favorite ? .red : .black)
             .padding(5)
+            .frame(width: 150)
+            .background(Color.green.opacity(0.1))
+            .cornerRadius(15)
             
         }
     }
