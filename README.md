@@ -11,8 +11,7 @@ A small SwiftUI app that displays a gallery of pixel-art characters, where users
 ---
 ## 📷 Screenshot
 
-![favorite-characters-screenshot](https://github.com/user-attachments/assets/5aa367bb-1d26-4b82-b2a0-bc909e05401d)
-
+![favorite-character-screenshot](https://github.com/user-attachments/assets/8745a858-7852-46b6-8040-c10425fe0cbc)
 
 ---
 
