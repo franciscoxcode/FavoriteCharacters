@@ -15,45 +15,43 @@ A small SwiftUI app that displays a gallery of pixel-art characters, where users
 
 ---
 
-## 🛠️ Tech Stack
+## 🔧 Features & Stack Used
 
-![SwiftUI](https://badgen.net/badge/Styling/SwiftUI/blue?icon=nextjs&label=) – Declarative UI framework by Apple   
-![XCode](https://badgen.net/badge/Built%20with/XCode/purple?icon=tailwindcss&label=) – Utility-first CSS framework for modern UI design  
-![Swift](https://badgen.net/badge/Written%20with/Swift/pink?icon=markdown&label=) – Coding language for Apple products  
-![SFSymbols](https://badgen.net/badge/SF/SF%20Symbols/green?icon=markdown&label=) – System icons used for buttons  
-![GitHub](https://badgen.net/badge/Version%20Control/GitHub/black?icon=github&label=) – Version control and code collaboration  
+- Grid layout using `LazyVGrid` from **SwiftUI**, displaying pixel-art characters responsively
+- Favorite toggle built with a reusable `@Binding`-based button using **SF Symbols**
+- Component structure with `CharacterCardView`, `CharacterGridView`, and `FavoriteButton`, written in **Swift**
+- Custom assets organized in `Assets.xcassets` and displayed using `Image`
+- State-driven updates using `@State` and `@Binding` to sync favorites across views
+- Built entirely in **Xcode** and version-controlled with **GitHub**
 
+---
+
+## 🧪 Highlighted Technical Detail
+
+The heart button uses a custom `@Binding`-driven toggle inside a reusable view.  
+It receives a `Bool` binding from the parent card view (`CharacterCardView`) and updates the favorite status directly.  
+This allowed me to separate UI and logic cleanly while learning more about state sharing in SwiftUI.
 
 ---
 
 ## 📁 Project Structure
 
 ```bash
-/Assets.xcassets          # Pixel art images (bart.png, lisa.png, etc.)
-/Character.swift          # Character model struct
-/FavoriteButton.swift     # Reusable heart toggle
-/CharacterCardView.swift
-/CharacterGridView.swift
-/ContentView.swift        # Root view
+/Assets.xcassets          # Pixel-art character images (e.g. bart.png, lisa.png)
+/Character.swift          # Model struct defining each character’s data
+/FavoriteButton.swift     # Reusable heart toggle button with @Binding
+/CharacterCardView.swift  # Individual character card displaying image + heart
+/CharacterGridView.swift  # View showing grid of all characters using LazyVGrid
+/ContentView.swift        # Root view containing the main layout
 ```
-
----
-
-## 🧩 Features
-
-- Grid layout with `LazyVGrid`  
-- `@State` and `@Binding` used for state management  
-- Reusable components: card and heart button  
-- Pixel art characters: Bart, Lisa, Maggie, Marge, Homer & Milhouse  
-- Favorite toggle with SF Symbol feedback
 
 ---
 
 ## 🚧 Roadmap
 
 - [x] Build character model and images  
-- [x] Create favorite toggle with `@Binding`  
-- [x] Display characters in grid layout  
+- [x] Reusable heart toggle with `@Binding`  
+- [x] Display characters in `LazyGrid`  
 - [ ] Add animations to the heart button  
 - [ ] Add persistence (e.g. `@AppStorage`)  
 - [ ] Add filter to show only favorites
@@ -62,9 +60,26 @@ A small SwiftUI app that displays a gallery of pixel-art characters, where users
 
 ## 🚀 Getting Started
 
-1. Clone the repository
-2. Open the `.xcodeproj` file in Xcode
-3. Run the app on a simulator or real device
+To run this app locally:
+
+### Requirements
+- Xcode 15 or newer
+- macOS Ventura or later
+- iOS Simulator or real device (iOS 16+)
+
+### Steps
+
+1. Clone this repository:
+```bash
+git clone https://github.com/your-username/FavoriteCharacters.git
+```
+
+2. Open the project in Xcode:
+  ```bash
+  open FavoriteCharacters.xcodeproj
+  ```
+
+3. Build and run the app on a simulator or real device.
 
 ---
 
